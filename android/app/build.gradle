@@ -240,8 +240,6 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
-    }
-    signingConfigs {
         release {
             storeFile file(String.valueOf(System.getenv("GRADLE_KEYSTORE")))
             storePassword System.getenv("GRADLE_KEYSTORE_PASSWORD")
@@ -251,9 +249,11 @@ android {
     }
     buildTypes {
         debug {
+            resValue "string", "app_name", appName
             signingConfig signingConfigs.debug
         }
         release {
+            resValue "string", "app_name", appName
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
