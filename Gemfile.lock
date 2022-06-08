@@ -178,6 +178,7 @@ GEM
 
 PLATFORMS
   universal-darwin-17
+  universal-darwin-21
 
 DEPENDENCIES
   fastlane
