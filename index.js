@@ -5,8 +5,9 @@ import App from './App';
 import { ENV } from './src/environment';
 
 const codePushOptions = {
+  updateDialog: true,
+  installMode: codePush.InstallMode.IMMEDIATE,
   checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
-  installMode: codePush.InstallMode.ON_NEXT_SUSPEND,
   minimumBackgroundDuration: ENV === 'production' ? 120 : 0,
 };
 const CodePushedApp = codePush(codePushOptions)(App);
